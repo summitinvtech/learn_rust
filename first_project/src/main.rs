@@ -8,7 +8,7 @@ use rand::Rng;
 fn get_secret_number() -> u32 {
     let secret_number = rand::thread_rng().gen_range(1, 101);
     println!("secret is {}", secret_number);
-    return secret_number;
+    secret_number
 }
 
 fn get_guess() -> u32 {
@@ -19,8 +19,7 @@ fn get_guess() -> u32 {
         .expect("Failed to read line");
     let guess: u32 = guess.trim().parse()
         .expect("Please type a positive integer!");
-
-    return guess;
+    guess
 }
 
 fn compare_guess(guess:u32, sec_num:u32) -> String {
@@ -30,11 +29,9 @@ fn compare_guess(guess:u32, sec_num:u32) -> String {
             Ordering::Greater => "too large",
             Ordering::Equal => "you got it",
         };
-    return result.to_string();
+    result.to_string()
 }
 fn guess_game() {
-    
-    
     println!("guess a number!");
     
     let guess = get_guess();
@@ -47,12 +44,6 @@ fn guess_game() {
 
 }
 fn main() {
-//     let numbers = [1, 2, 5].iter();
-
-//     let sum = numbers
-//         .fold(0, |acc, next| acc+next);
-    
-//     println!("sum is {:#?}", sum);
 
     guess_game();
 }

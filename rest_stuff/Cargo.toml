@@ -1,5 +1,5 @@
 [package]
-name = "first_project"
+name = "rest_stuff"
 version = "0.1.0"
 authors = ["Jeremy Frank <jfrank@summitinvest.tech>"]
 edition = "2018"
@@ -8,4 +8,4 @@ edition = "2018"
 
 [dependencies]
 
-rand = "0.4"
+ureq = { version = "*", features = ["json"] }
