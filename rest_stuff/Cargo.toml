@@ -8,4 +8,7 @@ edition = "2018"
 
 [dependencies]
 
-ureq = { version = "*", features = ["json"] }
+ureq = "*"
+csv = "1.1"
+chrono = "*"
+serde = { version = "1.0", features = ["derive"] }
