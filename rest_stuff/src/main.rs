@@ -22,8 +22,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // sync post request of some json.
     let req = ureq::get("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv")
         .call()
-        .into_string()
-        .unwrap();
+        .into_string()?;
+        
     let strreq = req.as_str();
     let covid_data : Vec<CovidData> = parse_csv(strreq.as_bytes())?;
     let filtered : Vec<CovidData> = covid_data
